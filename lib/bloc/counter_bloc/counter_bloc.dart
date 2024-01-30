@@ -4,12 +4,8 @@ import 'package:block_work/bloc/counter_bloc/counter_state.dart';
 
 class CounterBloc extends Bloc<CounterEvent, CounterState> {
   CounterBloc() : super(const CounterState()) {
-    on<Increament>(
-      _increament,
-    );
-    on<Decreament>(
-      _decreament,
-    );
+    on<Increament>(_increament);
+    on<Decreament>(_decreament);
   }
 
   void _increament(Increament increament, Emitter<CounterState> emit) {
