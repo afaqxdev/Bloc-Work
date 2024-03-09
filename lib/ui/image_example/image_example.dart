@@ -11,7 +11,6 @@ class ImagePickerExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("object");
     return Scaffold(
       appBar: AppBar(
           title: const Text(
@@ -24,7 +23,7 @@ class ImagePickerExample extends StatelessWidget {
             BlocBuilder<ImagePickerBloc, ImagePickerState>(
               builder: (context, state) {
                 if (state.imagepicker == null) {
-                  return SizedBox.shrink();
+                  return const SizedBox.shrink();
                 } else {
                   return SizedBox(
                     height: 300,

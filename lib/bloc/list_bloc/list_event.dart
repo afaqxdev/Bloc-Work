@@ -13,14 +13,14 @@ class AddToDoEvent extends ToDoEvent{
   @override
 
 
-  List<Object?> get props => [];
+  List<Object?> get props => [task];
 }
 class RemoveToDoEvent extends ToDoEvent{
- final String task;
+ final Object task;
   const RemoveToDoEvent({
     required this.task,
   });
  
   @override
-   List<Object?> get props => [];
+   List<Object?> get props => [task];
 }

@@ -6,7 +6,7 @@ class ToDoBloc extends Bloc<ToDoEvent,ToDoState>{
   final List<String> toDoList=[];
   ToDoBloc():super(const ToDoState()){
     on<AddToDoEvent>(addToDOEvent);
-    on<AddToDoEvent>(removeToDOEvent);
+    on<RemoveToDoEvent>(removeToDOEvent);
   }
 
   void addToDOEvent(AddToDoEvent event,Emitter<ToDoState>emit){
@@ -14,7 +14,7 @@ class ToDoBloc extends Bloc<ToDoEvent,ToDoState>{
     emit(state.copyWith(toDoList: List.from(toDoList)));
 
   }
-  void removeToDOEvent(AddToDoEvent event,Emitter<ToDoState>emit){
+  void removeToDOEvent(RemoveToDoEvent event,Emitter<ToDoState>emit){
    toDoList.remove(event.task); 
     emit(state.copyWith(toDoList: List.from(toDoList)));
 
